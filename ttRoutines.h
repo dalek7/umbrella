@@ -20,7 +20,7 @@ inline void ShuffleArray(T* src, int sz)
 
 
 template <class T>
-inline void ShiftWithNew(T* arr, const T &n_val, int szarr)
+inline void ShiftWithNew(T* arr, const T &n_val, int sz)
 {
 	int i;
 	for(i=0; i< sz-1; i++)
