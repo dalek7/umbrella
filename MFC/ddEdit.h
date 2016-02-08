@@ -36,7 +36,6 @@ public:
 // Overrides
 public:
 	virtual BOOL PreTranslateMessage(MSG* pMsg);
-	virtual LRESULT WindowProc(UINT message, WPARAM wParam, LPARAM lParam);
 
 protected:
 	CFont	m_font;

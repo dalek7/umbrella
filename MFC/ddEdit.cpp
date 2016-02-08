@@ -109,7 +109,7 @@ BOOL ddEdit::PreTranslateMessage(MSG* pMsg)
 
 	if(pMsg->message==WM_KEYDOWN)
 	{
-		if(pMsg->wParam==VK_RETURN )//|| pMsg->wParam==VK_ESCAPE
+		if(pMsg->wParam==VK_RETURN )
 		{
 
 			/*
@@ -119,7 +119,7 @@ BOOL ddEdit::PreTranslateMessage(MSG* pMsg)
 			*/
 			return 1;
 		}
-		else if(pMsg->wParam==VK_UP)//|| pMsg->wParam==VK_ESCAPE
+		else if(pMsg->wParam==VK_UP)
 		{
 			CString buf;
 			this->GetWindowTextA(buf);
@@ -130,7 +130,7 @@ BOOL ddEdit::PreTranslateMessage(MSG* pMsg)
 				this->SetValuef(v);
 			}
 		}
-		else if(pMsg->wParam==VK_DOWN)//|| pMsg->wParam==VK_ESCAPE
+		else if(pMsg->wParam==VK_DOWN)
 		{
 
 			CString buf;
@@ -152,16 +152,6 @@ BOOL ddEdit::PreTranslateMessage(MSG* pMsg)
 	//return CEdit::PreTranslateMessage(pMsg);
 }
 
-LRESULT ddEdit::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
-{
-	switch (message)
-	{
-	//case WM_CHAR:
-
-	
-	}
-	return CEdit::WindowProc(message, wParam, lParam);
-}
 
 
 BOOL ddEdit::IsEmpty()
