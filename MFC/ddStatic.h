@@ -1,8 +1,13 @@
 #pragma once
 
 
-// ddStatic
-//#include "dbg.h"
+/////////////
+/* example
+ddStatic m_info1;
+m_info1.Create("Hello !", WS_VISIBLE|WS_CHILD, CRect(0,0,100,50)+CPoint(20,20),this,0,200);
+*/
+/////////////
+
 class ddStatic : public CStatic
 {
 	DECLARE_DYNAMIC(ddStatic)
