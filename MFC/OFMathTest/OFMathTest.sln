@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OFMathTest", "OFMathTest\OFMathTest.vcxproj", "{140AD6F8-CF86-4BB3-9DB7-D0498F45971D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{140AD6F8-CF86-4BB3-9DB7-D0498F45971D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{140AD6F8-CF86-4BB3-9DB7-D0498F45971D}.Debug|Win32.Build.0 = Debug|Win32
+		{140AD6F8-CF86-4BB3-9DB7-D0498F45971D}.Release|Win32.ActiveCfg = Release|Win32
+		{140AD6F8-CF86-4BB3-9DB7-D0498F45971D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
