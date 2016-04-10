@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MathJS - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\TMP\TMP\RSP6624.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/MathJS.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Study\2011\Projects\MathDIsp\MathJS\MathJS\MathJS\MathJSView.cpp"
+]
+Creating command line "cl.exe @C:\TMP\TMP\RSP6624.tmp" 
+Creating temporary file "C:\TMP\TMP\RSP6625.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/MathJS.pdb" /debug /machine:I386 /out:"Debug/MathJS.exe" /pdbtype:sept 
+.\Debug\MainFrm.obj
+.\Debug\MathJS.obj
+.\Debug\MathJSDoc.obj
+.\Debug\MathJSView.obj
+.\Debug\MathView.obj
+.\Debug\PTRList.obj
+.\Debug\StdAfx.obj
+.\Debug\vParser.obj
+.\Debug\VString.obj
+.\Debug\vToken.obj
+.\Debug\WebScript.obj
+.\Debug\MathJS.res
+.\Debug\FileProc.obj
+]
+Creating command line "link.exe @C:\TMP\TMP\RSP6625.tmp"
+<h3>Output Window</h3>
+Compiling...
+MathJSView.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+MathJS.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

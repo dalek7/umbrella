@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"]
+  });
+</script>
+<script type="text/javascript" src="../mathjax/MathJax.js"></script>
+
+
+
+<script type='text/javascript'>
+
+
+(function () {
+    var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
+    var math = null, box = null;    // the element jax for the math output, and the box it's in
+
+    //
+    //  Hide and show the box (so it doesn't flicker as much)
+    //
+    var HIDEBOX = function () {box.style.visibility = "hidden"}
+    var SHOWBOX = function () {box.style.visibility = "visible"}
+
+    //
+    //  Get the element jax when MathJax has produced it.
+    //
+    QUEUE.Push(function () 
+	{
+      math = MathJax.Hub.getAllJax("MathOutput")[0];
+      box = document.getElementById("box");
+      SHOWBOX(); // box is initially hidden so the braces don't show
+    });
+
+
+	window.UpdateMath = function (TeX) 
+	{
+		//alert(TeX);
+		QUEUE.Push(HIDEBOX,["Text",math,"\\displaystyle{"+TeX+"}"],SHOWBOX);
+	}
+
+
+
+  })();
+
+	
+
+	function fnc1(arg1) 
+	{
+		alert(arg1);
+		//navigate('user://'+arg1);
+		//sendRequest('ajaxproc.php', params, callback, 'POST');
+	}
+</script>
+
+</head>
+
+
+</head>
+<body>
+
+
+<div class="box" id="box" style="visibility:hidden">
+<div id="MathOutput" class="output">$${}$$</div>
+</div>
+
+
+<br/><br/><br/><br/><br/>
+
+
+This expression \(\sqrt{3x-1}+(1+x)^2\) is an example of an inline equation.
+
+\[  \begin{aligned}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \\   \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} &amp; = 0 \end{aligned}
+\]
+
+
+Hi, 
+\[ d_i = \left\{ \begin{array}{ll}
+        d_i \pm1 & \mbox{if $l_i \neq b_k$};\\
+        d_i & \mbox{if $l_i = b_k$},\end{array} \right. \] 
+
+</body>
+</html>
