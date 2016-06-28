@@ -1,0 +1,12 @@
+1) ~/.bashrc
+
+source /opt/ros/fuerte/setup.bash
+source ~/work/ROS/setup.bash
+export RR=~/work/ROS/
+export ROS_PACKAGE_PATH=/home/seung/work/ROS:$ROS_PACKAGE_PATH
+
+export ROS_MASTER_URI=http://10.211.55.4:11311
+
+2) ~/work/ROS/setup.bash 
+export ROS_PACKAGE_PATH=~/work/ROS:$ROS_PACKAGE_PATH
+
