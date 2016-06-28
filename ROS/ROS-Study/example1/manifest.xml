@@ -1,0 +1,16 @@
+<package>
+  <description brief="hri_ex1_hello">
+
+     hri_ex1_hello
+
+  </description>
+  <author>dalek
+</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hri_ex1_hello</url>
+  <depend package="roscpp"/>
+
+</package>
+
+
