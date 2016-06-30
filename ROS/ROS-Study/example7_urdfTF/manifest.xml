@@ -1,0 +1,17 @@
+<package>
+  <description brief="hri_ex7_urdfTF">
+
+     hri_ex7_urdfTF
+
+  </description>
+  <author>koosy</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hri_ex7_urdfTF</url>
+  <depend package="roscpp"/>
+  <depend package="urdf"/>
+  <depend package="tf"/>
+
+</package>
+
+

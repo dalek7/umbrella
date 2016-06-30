@@ -1,0 +1,15 @@
+<package>
+  <description brief="hri_ex2_msg">
+
+     hri_ex2_msg
+
+  </description>
+  <author>koosy</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hri_ex2_msg</url>
+  <depend package="roscpp"/>
+
+</package>
+
+

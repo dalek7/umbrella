@@ -1,0 +1,17 @@
+<package>
+  <description brief="hri_ex6_urdf">
+
+     hri_ex6_urdf
+
+  </description>
+  <author>koosy</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hri_ex6_urdf</url>
+  <depend package="roscpp"/>
+  <depend package="urdf"/>
+  <depend package="tf"/>
+
+</package>
+
+

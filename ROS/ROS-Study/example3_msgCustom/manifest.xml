@@ -1,0 +1,15 @@
+<package>
+  <description brief="hri_ex3_msgCustom">
+
+     hri_ex3_msgCustom
+
+  </description>
+  <author>koosy</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hri_ex3_msgCustom</url>
+  <depend package="roscpp"/>
+
+</package>
+
+

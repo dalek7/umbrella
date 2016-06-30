@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mobman">
+    <xacro:property name="base_size_width" value="0.5" />
+    <xacro:property name="base_size_z" value="0.3" />
+    <xacro:property name="body_size_z" value="0.4" />
+    <xacro:property name="body_size_width" value="0.1" />
+    <xacro:property name="chest_size" value="0.4" />
+    <xacro:property name="head_size_x" value="0.4" />
+    <xacro:property name="head_size_y" value="0.3" />
+    <xacro:property name="head_size_z" value="0.2" />
+    <xacro:property name="armUp_height" value="0." />
+    <xacro:property name="armUp_length" value="0.3" />
+    <xacro:property name="armUp_width" value="0.1" />
+    <xacro:property name="armDown_length" value="0.25" />
+    <xacro:property name="armDown_width" value="0.1" />
+    <xacro:property name="hand_length" value="0.15" />
+    <xacro:property name="hand_width" value="0.07" />
+    <xacro:property name="gap" value="0.025" />
+
+    <link name="base">
+    <visual>
+        <geometry>
+            <cylinder radius="${base_size_width/2}" length="${base_size_z}" />
+        </geometry>
+        <origin xyz ="0 0 ${base_size_z/2}" />
+        <material name="yello">
+            <color rgba="0 1 1 1"/>
+        </material>
+    </visual>
+    </link>
+    <link name="body">
+    <visual>
+        <geometry>
+            <box size="${body_size_width} ${body_size_width} ${body_size_z+gap}" />
+        </geometry>
+        <origin xyz ="0 0 ${body_size_z/2}" />
+        <material name="white">
+            <color rgba="1 1 1 1"/>
+        </material>
+    </visual>
+    </link>
+    <link name="chest">
+        <visual>
+            <geometry>
+           <!---     <cylinder radius="${body_size_x/2-gap}" length="${body_size_z-gap}" /> -->
+                <sphere radius="${chest_size/2}"/>
+            </geometry>
+            <!--- <origin xyz ="0 0 ${body_size_z/2}" /> -->
+            <origin xyz ="0 0 0" />
+            <material name="white">
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="head_x" />
+    <link name="head_z" >
+        <visual>
+            <geometry>
+                <box size="${head_size_x} ${head_size_y} ${head_size_z-gap*2}" />
+            </geometry>
+            <origin xyz ="0 0 ${head_size_z/2}" />
+            <material name="blue">
+                <color rgba="1 0 1 1"/>
+            </material>
+        </visual>
+    </link>
+    <link name="leftArmUp_x" />
+    <link name="leftArmUp_y" />
+    <link name="leftArmUp_z" >
+    <visual>
+        <geometry>
+            <box size="${armUp_width} ${armUp_width} ${armUp_length-gap*2}" />
+        </geometry>
+        <origin xyz ="0 0 ${armUp_length/2}" />
+        <material name="red">
+            <color rgba="1 0 0 1"/>
+        </material>
+    </visual>
+    </link>
+    <link name="leftArmDown_x" />
+    <link name="leftArmDown_z" >
+    <visual>
+        <geometry>
+            <box size="${armDown_width} ${armDown_width} ${armDown_length-gap*2}" />
+        </geometry>
+        <origin xyz ="0 0 ${armDown_length/2}" />
+        <material name="green">
+            <color rgba="0 1 0 1"/>
+        </material>
+    </visual>
+    </link>
+    <link name="leftHand" >
+    <visual>
+        <geometry>
+            <box size="${hand_width} ${hand_width} ${hand_length-gap*2}" />
+        </geometry>
+        <origin xyz ="0 0 ${hand_length/2}" />
+        <material name="hand">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    </link>
+    <link name="rightArmUp_x" />
+    <link name="rightArmUp_y" />
+    <link name="rightArmUp_z" >
+    <visual>
+        <geometry>
+            <box size="${armUp_width} ${armUp_width} ${armUp_length-gap*2}" />
+        </geometry>
+        <origin xyz ="0 0 ${armUp_length/2}" />
+        <material name="red">
+            <color rgba="1 0 0 1"/>
+        </material>
+    </visual>
+    </link>
+    <link name="rightArmDown_x" />
+    <link name="rightArmDown_z" >
+    <visual>
+        <geometry>
+            <box size="${armDown_width} ${armDown_width} ${armDown_length-gap*2}" />
+        </geometry>
+        <origin xyz ="0 0 ${armDown_length/2}" />
+        <material name="green">
+            <color rgba="0 1 0 1"/>
+        </material>
+    </visual>
+    </link>
+    <link name="rightHand" >
+    <visual>
+        <geometry>
+            <box size="${hand_width} ${hand_width} ${hand_length-gap*2}" />
+        </geometry>
+        <origin xyz ="0 0 ${hand_length/2}" />
+        <material name="hand">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    </link>
+
+
+    <joint name="joint_body" type="fixed">
+        <parent link="base" />
+        <child link="body" />
+        <origin xyz="0 0 ${base_size_z}" rpy="0 0 0"/>
+    </joint>
+    <joint name="joint_chest" type="fixed">
+        <parent link="body" />
+        <child link="chest" />
+        <origin xyz=" 0 0 ${body_size_z+chest_size/2}" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="joint_head_x" type="continuous">
+        <parent link="chest"/>
+        <child link="head_x"/>
+        <origin xyz="0 0 ${chest_size/2}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="joint_head_z" type="continuous">
+        <parent link="head_x"/>
+        <child link="head_z"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+    <joint name="joint_leftArmUp_x" type="continuous">
+        <parent link="chest"/>
+        <child link="leftArmUp_x"/>
+        <origin xyz="${chest_size/2} 0 ${armUp_height}" rpy="0 1.57 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="joint_leftArmUp_y" type="continuous">
+        <parent link="leftArmUp_x"/>
+        <child link="leftArmUp_y"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+    <joint name="joint_leftArmUp_z" type="continuous">
+        <parent link="leftArmUp_y"/>
+        <child link="leftArmUp_z"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="joint_leftArmDown_x" type="continuous">
+        <parent link="leftArmUp_z"/>
+        <child link="leftArmDown_x"/>
+        <origin xyz="0 0 ${armUp_length}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="joint_leftArmDown_z" type="continuous">
+        <parent link="leftArmDown_x"/>
+        <child link="leftArmDown_z"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="joint_leftHand_x" type="continuous">
+        <parent link="leftArmDown_z"/>
+        <child link="leftHand"/>
+        <origin xyz="0 0 ${armDown_length}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+
+
+    <joint name="joint_rightArmUp_x" type="continuous">
+        <parent link="chest"/>
+        <child link="rightArmUp_x"/>
+        <origin xyz="${-chest_size/2} 0 ${armUp_height}" rpy="0 -1.57 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="joint_rightArmUp_y" type="continuous">
+        <parent link="rightArmUp_x"/>
+        <child link="rightArmUp_y"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+    <joint name="joint_rightArmUp_z" type="continuous">
+        <parent link="rightArmUp_y"/>
+        <child link="rightArmUp_z"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="joint_rightArmDown_x" type="continuous">
+        <parent link="rightArmUp_z"/>
+        <child link="rightArmDown_x"/>
+        <origin xyz="0 0 ${armUp_length}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="joint_rightArmDown_z" type="continuous">
+        <parent link="rightArmDown_x"/>
+        <child link="rightArmDown_z"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="joint_rightHand_x" type="continuous">
+        <parent link="rightArmDown_z"/>
+        <child link="rightHand"/>
+        <origin xyz="0 0 ${armDown_length}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+</robot>

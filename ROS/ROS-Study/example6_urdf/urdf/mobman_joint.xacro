@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mobman">
+    <xacro:property name="body_size_z" value="1" />
+    <xacro:property name="body_size_x" value="0.4" />
+    <xacro:property name="armUp_height" value="0.8" />
+    <xacro:property name="armUp_length" value="0.3" />
+    <xacro:property name="armDown_length" value="0.25" />
+    <xacro:property name="hand_length" value="0.15" />
+
+    <link name="body" />
+    <link name="head_z" />
+    <link name="head_x" />
+    <link name="leftArmUp_x" />
+    <link name="leftArmUp_y" />
+    <link name="leftArmUp_z" />
+    <link name="leftArmDown_x" />
+    <link name="leftArmDown_z" />
+    <link name="leftHand" />
+    <link name="rightArmUp_x" />
+    <link name="rightArmUp_y" />
+    <link name="rightArmUp_z" />
+    <link name="rightArmDown_x" />
+    <link name="rightArmDown_z" />
+    <link name="rightHand" />
+
+
+    <joint name="joint_head_x" type="continuous">
+        <parent link="body"/>
+        <child link="head_x"/>
+        <origin xyz="0 0 ${body_size_z}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="joint_head_z" type="continuous">
+        <parent link="head_x"/>
+        <child link="head_z"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+    <joint name="joint_leftArmUp_x" type="continuous">
+        <parent link="body"/>
+        <child link="leftArmUp_x"/>
+        <origin xyz="${body_size_x/2} 0 ${armUp_height}" rpy="0 1.57 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="joint_leftArmUp_y" type="continuous">
+        <parent link="leftArmUp_x"/>
+        <child link="leftArmUp_y"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+    <joint name="joint_leftArmUp_z" type="continuous">
+        <parent link="leftArmUp_y"/>
+        <child link="leftArmUp_z"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="joint_leftArmDown_x" type="continuous">
+        <parent link="leftArmUp_z"/>
+        <child link="leftArmDown_x"/>
+        <origin xyz="0 0 ${armUp_length}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="joint_leftArmDown_z" type="continuous">
+        <parent link="leftArmDown_x"/>
+        <child link="leftArmDown_z"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="joint_leftHand_x" type="continuous">
+        <parent link="leftArmDown_z"/>
+        <child link="leftHand"/>
+        <origin xyz="0 0 ${armDown_length}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+
+
+    <joint name="joint_rightArmUp_x" type="continuous">
+        <parent link="body"/>
+        <child link="rightArmUp_x"/>
+        <origin xyz="${-body_size_x/2} 0 ${armUp_height}" rpy="0 -1.57 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="joint_rightArmUp_y" type="continuous">
+        <parent link="rightArmUp_x"/>
+        <child link="rightArmUp_y"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+    <joint name="joint_rightArmUp_z" type="continuous">
+        <parent link="rightArmUp_y"/>
+        <child link="rightArmUp_z"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="joint_rightArmDown_x" type="continuous">
+        <parent link="rightArmUp_z"/>
+        <child link="rightArmDown_x"/>
+        <origin xyz="0 0 ${armUp_length}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="joint_rightArmDown_z" type="continuous">
+        <parent link="rightArmDown_x"/>
+        <child link="rightArmDown_z"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="joint_rightHand_x" type="continuous">
+        <parent link="rightArmDown_z"/>
+        <child link="rightHand"/>
+        <origin xyz="0 0 ${armDown_length}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+    </joint>
+</robot>
