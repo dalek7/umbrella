@@ -1,0 +1,34 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: TCPClient - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/TCPClient.res" /d "_DEBUG" /d "_AFXDLL" "C:\work\Maya\MFC\TCPClient\TCPClient\TCPClient.rc"" 
+Creating temporary file "C:\TEMP_U~1\RSPD667.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/TCPClient.pdb" /debug /machine:I386 /out:"Debug/TCPClient.exe" /pdbtype:sept 
+.\Debug\MainFrm.obj
+.\Debug\StdAfx.obj
+.\Debug\TCPClient.obj
+.\Debug\TCPClientDoc.obj
+.\Debug\TCPClientView.obj
+.\Debug\TCPClient.res
+.\Debug\ddEdit.obj
+.\Debug\CMDEdit.obj
+.\Debug\ClientSocket.obj
+]
+Creating command line "link.exe @C:\TEMP_U~1\RSPD667.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Linking...
+
+
+
+<h3>Results</h3>
+TCPClient.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
