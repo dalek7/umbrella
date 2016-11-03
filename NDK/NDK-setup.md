@@ -13,6 +13,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT
 export PATH=$PATH:~/FL/toolkits/Android/android-sdk-linux/platform-tools
 
 **export NDK_ROOT=~/FL/toolkits/Android/android-ndk-r10e**
+
 **export PATH=$PATH:$NDK_ROOT**
 
 # Extracting the toolchain
