@@ -43,6 +43,7 @@ void TestEigenMatrix1()
     mat1.bottomRightCorner(size/2, size/2) = MatrixXd::Zero(size/2, size/2);
     std::cout << mat1 << std::endl << std::endl;
 
-
+    // see https://github.com/RainerKuemmerle/g2o/blob/master/g2o/examples/data_fitting/curve_fit.cpp
+    cout << Eigen::Matrix<double, 1, 1>::Identity() << endl << endl;
 
 }
