@@ -28,8 +28,10 @@ void TestEigenMatrix2()
         Eigen::Matrix3d rot = rotz.toRotationMatrix();// (rotz * roty).toRotationMatrix();
         Eigen::Isometry3d t;
         t = rot;
+        Eigen::Transform<double, 3, 1, 0>::LinearPart l = t.linear();
         
         cout << "#" << n << endl;
+        
         //row-wise
         sprintf(buf, "%f\t%f\t%f\t%f\n%f\t%f\t%f\t%f\n%f\t%f\t%f\t%f\n%f\t%f\t%f\t%f",
                 t(0,0), t(0,1),t(0,2), t(0,3),
@@ -42,7 +44,10 @@ void TestEigenMatrix2()
                 rot(0,0), rot(0,1),rot(0,2),
                 rot(1,0), rot(1,1),rot(1,2),
                 rot(2,0), rot(2,1),rot(2,2));
-        cout << buf << endl<< endl;
+        cout << buf << endl;
+        //sprintf(buf, "Linear part: %f\t%f\t%f\n", l(0,0), l(1,0), l(2,0));
+        cout << "Linear part: \n"<< l << endl;
+        //cout << buf << endl<< endl;
 
     }
     
