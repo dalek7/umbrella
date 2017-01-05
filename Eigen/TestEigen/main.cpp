@@ -12,7 +12,8 @@ void TestEigenMatrix2();
 
 int main()
 {
-    TestEigenMatrix2();
+    TestEigenMatrix1();
+    //TestEigenMatrix2();
     cout << "Finished!" << endl;
     return 0;
 }
@@ -50,7 +51,6 @@ void TestEigenMatrix2()
         //cout << buf << endl<< endl;
 
     }
-    
 }
 
 // from https://eigen.tuxfamily.org/dox-devel/group__TutorialAdvancedInitialization.html
@@ -82,5 +82,7 @@ void TestEigenMatrix1()
 
     // see https://github.com/RainerKuemmerle/g2o/blob/master/g2o/examples/data_fitting/curve_fit.cpp
     cout << Eigen::Matrix<double, 1, 1>::Identity() << endl << endl;
-
+    
+    Eigen::Matrix3d transNoise = Eigen::Matrix3d::Zero();
+    cout << transNoise <<endl;
 }
