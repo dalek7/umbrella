@@ -51,6 +51,14 @@ void TestEigenMatrix2()
         cout << buf << endl;
         //sprintf(buf, "Linear part: %f\t%f\t%f\n", l(0,0), l(1,0), l(2,0));
         cout << "Linear part: \n"<< l << endl;
+        
+        // Quaternion<double> 
+        Eigen::Quaterniond quat1 = (Eigen::Quaterniond) l;
+        Eigen::Quaterniond::Coefficients coeff1= quat1.coeffs();
+        // typedef Matrix<_Scalar,4,1,_Options> Coefficients;
+        
+        cout << "Linear part(quaternion version): \n"<< coeff1(0,0)<< " " <<coeff1(1,0)<< " " <<coeff1(2,0)<< " " <<coeff1(3,0) << endl;
+        cout <<coeff1 << endl;
         //cout << buf << endl<< endl;
 
     }
