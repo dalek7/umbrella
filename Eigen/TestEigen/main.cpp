@@ -12,8 +12,8 @@ void TestEigenMatrix2();
 
 int main()
 {
-    TestEigenMatrix1();
-    //TestEigenMatrix2();
+    //TestEigenMatrix1();
+    TestEigenMatrix2();
     cout << "Finished!" << endl;
     return 0;
 }
@@ -22,6 +22,7 @@ void TestEigenMatrix2()
 {
     int nodesPerLevel = 36;
     char buf[255]={0,};
+    double radius = 10;
     for (int n = 0; n < nodesPerLevel; n++)
     {
         Eigen::AngleAxisd rotz(-M_PI + 2*n*M_PI / nodesPerLevel, Eigen::Vector3d::UnitZ());
@@ -29,6 +30,8 @@ void TestEigenMatrix2()
         Eigen::Matrix3d rot = rotz.toRotationMatrix();// (rotz * roty).toRotationMatrix();
         Eigen::Isometry3d t;
         t = rot;
+        t.translation() = t.linear() * Eigen::Vector3d(radius, 0, 0);
+        
         Eigen::Transform<double, 3, 1, 0>::LinearPart l = t.linear();
         
         cout << "#" << n << endl;
