@@ -21,3 +21,9 @@ obj/
 # Fortran module files
 *.mod
 
+# MFC-related
+*.sdf
+*.ncb
+ipch/
+Debug/
+Release/
