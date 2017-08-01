@@ -45,14 +45,14 @@ public class DDMath {
 		arr[0] = n_val;
 	
 	}
-    public static float ArrayMax(float [] arr) {
-        float max = Float.NEGATIVE_INFINITY;
+	public static float ArrayMax(float [] arr) {
+		float max = Float.NEGATIVE_INFINITY;
 
-        for(float cur: arr)
-            max = Math.max(max, cur);
+		for(float cur: arr)
+			max = Math.max(max, cur);
 
-        return max;
-    }
+		return max;
+	}
 
 	public static double ArrayMax(double [] arr) {
 		double max = Double.NEGATIVE_INFINITY;
@@ -63,21 +63,21 @@ public class DDMath {
 		return max;
 	}
 
-    public static double[] SoftMax(double[] arr)
-    {
-        double vmax = ArrayMax(arr);
+	public static double[] SoftMax(double[] arr)
+	{
+		double vmax = ArrayMax(arr);
 
 		int sz = arr.length;
-        double [] arr2 = new double[sz];
+		double [] arr2 = new double[sz];
 
 		double sum_exp_a = 0;
-        for(int i=0; i<sz; i++)
-        {
-            arr2[i] = arr[i] - vmax;
+		for(int i=0; i<sz; i++)
+		{
+			arr2[i] = arr[i] - vmax;
 
-            double expa = Math.exp(arr2[i]);
+			double expa = Math.exp(arr2[i]);
 			sum_exp_a += expa;
-        }
+		}
 
 		for(int i=0; i<sz; i++)
 		{
@@ -85,8 +85,8 @@ public class DDMath {
 		}
 
 
-        return arr2;
-    }
+		return arr2;
+	}
 
 
 	public static int GetMaxIndex(float[] arr)
