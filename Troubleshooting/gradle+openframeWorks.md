@@ -30,6 +30,16 @@ https://gradle.org/install/
 https://services.gradle.org/distributions/gradle-2.2.1-bin.zip
 ```
 
+* build.gradle 에는 1.3.1로 되어있는데 건들 필요 없었음.
+```
+dependencies {
+        classpath 'com.android.tools.build:gradle:1.3.1'
+        //classpath 'com.android.tools.build:gradle:2.2.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+```
+
 ## Summary
 ```
 Warning: Android Studio 2.3.3.0 requires Gradle 2.14.1 (or newer) but project is using 2.2.1.
