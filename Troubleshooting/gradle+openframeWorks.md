@@ -2,14 +2,14 @@
 * openFrameworks : 0.9.8
 * Android studio : 2.3.3.0
 * tested in macOS (Sierra)
-
+* Setup instruction : http://openframeworks.cc/setup/android-studio/
 
 ## Problem
 Android Studio 2.3.3.0 is equipped with Gradle 3+, but, openFrameworks (0.9.8) was written for Gradle 2.x (2.2.1).
 
 <img src='img/gradle0.png' />
 
-* Instruction : http://openframeworks.cc/setup/android-studio/
+
 
 * Error messages when building androidEmptyExample with default settings :
 ```
@@ -17,14 +17,14 @@ Error:(59, 0) Could not get unknown property 'assembleDebug' for root project 'a
 ```
 
 
-## Settings
+## FIX
 ### Gradle : Project-level settings in Android Studio
 ```
 /opt/gradle/gradle-2.2.1
 ```
 <img src='img/gradle1.png' />
 
-* How to setup ?
+* How to setup a different Gradle? See
 ```
 https://gradle.org/install/
 https://services.gradle.org/distributions/gradle-2.2.1-bin.zip
