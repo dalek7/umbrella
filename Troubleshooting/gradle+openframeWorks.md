@@ -46,3 +46,5 @@ Warning: Android Studio 2.3.3.0 requires Gradle 2.14.1 (or newer) but project is
 It is strongly recommended that you update Gradle to version 2.14.1 or newer.
 ```
 그러나 일단 2.2.1로도 빌드 진행 잘 되었음.
+
+<img src='img/gradle4.png' />
