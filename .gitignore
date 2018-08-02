@@ -31,3 +31,8 @@ obj/
 ipch/
 Debug/
 Release/
+
+#Python-related
+.ipynb_checkpoints/
+*.pyc
+
