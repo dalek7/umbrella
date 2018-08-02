@@ -36,3 +36,5 @@ Release/
 .ipynb_checkpoints/
 *.pyc
 
+# pycharm?
+.idea/
