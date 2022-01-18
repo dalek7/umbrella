@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Author: Jeremy M. Stober
 Program: RARGMAX.PY
@@ -17,6 +15,19 @@ def rargmax(vector):
     return pr.choice(indices)
 
 if __name__ == '__main__':
-    test = [0,1,2,1,0,2,2]
+    test = [0, 1, 2, 1, 0, 2, 2]
     for i in range(10):
-        print rargmax(test)
+        print(rargmax(test))
+
+''' A run example
+5
+5
+6
+5
+2
+2
+2
+2
+6
+2
+'''
